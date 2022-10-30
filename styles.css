@@ -19,10 +19,8 @@ html {
     height: 100px;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 10;
     margin-bottom: 50px;
-    background-color: rgba(0, 0, 0, 0.548);
+    background-color: rgba(0, 0, 0, 0.919);
 }
 
 .navbar > ul {
@@ -37,11 +35,12 @@ li {
 }
 
 li > a {
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
 }
 
-li:hover {
+li > a:hover {
     text-decoration: underline;
+    color: white;
 }
 
 .welcome-section {
@@ -54,8 +53,12 @@ li:hover {
     background-color: darkslategray;
 }
 
+.welcome-section > h1, p {
+    line-height: 2;
+}
+
 .welcome-section > p {
-    color: azure
+    color: rgba(240, 255, 255, 0.8);
 }
 
 
@@ -70,7 +73,7 @@ h2 {
 
 p {
     font-size: 30px;
-    color: azure;
+    color: rgba(240, 255, 255, 0.8);
 }
 
 h1, h2, p {
@@ -82,26 +85,33 @@ h1, h2, p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     margin: 0 auto;
-    padding: 50px;
+    padding: 100px;
     background-color: rgb(70, 70, 70);
 }
 
 .project-header {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .project-tile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: fit-content;
+    max-width: 1000px;
+    width: 100%;
     height: fit-content;
     gap: 40px;
     margin: 0 auto;
 }
 
+.project-tile > a:hover {
+    text-decoration: underline;
+    color: rgba(240, 255, 255, 0.8);
+}
+
 .project-image {
-    width: 320px;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -110,20 +120,20 @@ h1, h2, p {
 }
 
 button {
-    border: 1px solid azure;
+    border: 1px solid rgba(240, 255, 255, 0.8);
     border-radius: 5px;
     background-color: transparent;
     padding: 10px 20px;
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 button > a {
-    color: azure;
+    color: rgba(240, 255, 255, 0.8);
 }
 
 button:hover {
-    background-color: azure;
+    background-color: rgba(240, 255, 255, 0.8);
 }
 
 button > a:hover {
@@ -144,6 +154,7 @@ button > a:hover {
 .welcome-header, .project-header, .contact-header {
     color: antiquewhite;
 }
+
 .social-icons {
     display: flex;
     justify-content: space-around;
@@ -160,6 +171,10 @@ button > a:hover {
 
 .social-icons > a {
     font-size: 30px;
+    color: rgba(240, 255, 255, 0.5);
+}
+
+.social-icons > a:hover {
     color: azure;
 }
 
@@ -169,6 +184,39 @@ a {
 
 footer > p {
     color:rgb(70, 70, 70)
+}
+
+@media (max-width: 1220px) {
+    .project-tile {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 800px) {
+    .welcome-header {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+    .project-tile {
+        display: block;
+        max-width: 350px;
+    }
+
+    .project-image {
+        margin-top: 50px;
+    }
+
+    .contact-header {
+        font-size: 50px;
+    }
+
+    .social-icons > a {
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -200,17 +248,11 @@ footer > p {
     }
 
     .project-tile {
-        display: flex;
-        flex-direction: column;
+        display: block;
         justify-content: center;
         align-items: center;
         width: 100%;
 
-    }
-
-    .project-image {
-        width: 200px;
-        margin: 0 auto;
     }
 
     .project-title {
