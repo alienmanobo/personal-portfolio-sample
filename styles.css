@@ -195,19 +195,22 @@ footer > p {
     }
 
     .projects-section {
-        width: 100%
+        width: 100vw;
+
     }
 
     .project-tile {
-        display: block;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50vw;
+        width: 100%;
 
     }
 
     .project-image {
         width: 200px;
+        margin: 0 auto;
     }
 
     .project-title {
